@@ -8,6 +8,6 @@ public class WinPanelManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
 }

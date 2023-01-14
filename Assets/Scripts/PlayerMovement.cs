@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
+
 public class PlayerMovement : MonoBehaviour
 {
 
@@ -54,10 +56,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    private void HandleFailStatus()
+    public void HandleFailStatus()
     {
         lostPanel.SetActive(true);
-        Time.timeScale = 0;
+        _isGameStarted = false;
+        //Time.timeScale = 0;
     }
 
     IEnumerator HandleFinishLine(float count)
@@ -76,7 +79,8 @@ public class PlayerMovement : MonoBehaviour
 
         scoreText.text = $"You've collected {count} star(s). \n Waited {waitingTime} seconds for this screen.";
         winPanel.SetActive(true);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        _isGameStarted = false;
 
     }
 
